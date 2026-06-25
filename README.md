@@ -4,9 +4,12 @@
 
 ![](../../workflows/gds/badge.svg) ![](../../workflows/docs/badge.svg) ![](../../workflows/test/badge.svg) ![](../../workflows/fpga/badge.svg)
 
-# PILIPINAS flag in DVD-like screensaver and 7-segment display
+# PILIPINAS flag in DVD-like screensaver and 7-segment display with smoother wave!
 
-<img width="1308" height="734" alt="image" src="https://github.com/user-attachments/assets/0a40c82e-47e6-472e-9fe3-cb1022d81699" />
+new: <img width="1180" height="890" alt="image" src="https://github.com/user-attachments/assets/c8e46b31-4b30-4395-a753-5b980cde4a57" />
+
+
+old: <img width="1308" height="734" alt="image" src="https://github.com/user-attachments/assets/0a40c82e-47e6-472e-9fe3-cb1022d81699" />
 
 
 
