@@ -22,7 +22,7 @@ Run it in your browser by clicking this link: https://fpga.vga-playground.pages.
 
 <img width="463" height="639" alt="2D_flag" src="https://github.com/user-attachments/assets/a0d43f09-675b-421f-a023-64df823658f6" />
 
-<img width="956" height="1286" alt="image" src="https://github.com/user-attachments/assets/56e3fa2d-47a7-4f23-ae4a-199e4c429c39" />
+<img width="463" height="639" alt="image" src="https://github.com/user-attachments/assets/56e3fa2d-47a7-4f23-ae4a-199e4c429c39" />
 
 <img width="463" height="639" alt="Screenshot 2026-06-24 at 1 52 14 PM" src="https://github.com/user-attachments/assets/2322a187-0133-40a5-bcbd-c10980016852" />
 
