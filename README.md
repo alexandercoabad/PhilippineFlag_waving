@@ -6,7 +6,7 @@
 
 # PILIPINAS flag in DVD-like screensaver and 7-segment display with smoother wave!
 
-new: <img width="1180" height="890" alt="image" src="https://github.com/user-attachments/assets/c8e46b31-4b30-4395-a753-5b980cde4a57" />
+<img width="1286" height="668" alt="image" src="https://github.com/user-attachments/assets/2925ea09-e339-4478-a734-5da456f865b8" />
 
 
 old: <img width="1308" height="734" alt="image" src="https://github.com/user-attachments/assets/0a40c82e-47e6-472e-9fe3-cb1022d81699" />
@@ -14,7 +14,10 @@ old: <img width="1308" height="734" alt="image" src="https://github.com/user-att
 
 
 
-https://github.com/user-attachments/assets/660e6906-c295-4ebb-b98c-c1d7ed597ce1
+
+https://github.com/user-attachments/assets/d475b297-69e0-4e9f-8b2e-2463b8746662
+
+
 
 
 
