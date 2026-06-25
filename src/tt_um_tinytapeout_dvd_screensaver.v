@@ -45,17 +45,22 @@ module tt_um_combined (
     // DVD BOUNCING FLAG LOGIC WITH TRUE S-CURVE EDGES
     // -------------------------------------------------------
     wire [9:0] logo_x = pix_x - logo_left;
-    wire [9:0] logo_y = pix_y - logo_top;
+    
+    // Convert to explicit 12-bit signed ints to avoid any mixed-sign comparison traps
+    wire signed [11:0] current_y = $signed({2'b0, pix_y});
+    wire signed [11:0] current_top = $signed({2'b0, logo_top});
+    wire signed [11:0] logo_y = current_y - current_top;
 
     // Single Sine Wave Engine - logo_x[6:1] stretches the wave period over 128 pixels
     reg [5:0] wave_timer;
     wire [5:0] wave_index = logo_x [ 6:1 ] + wave_timer;
     reg signed [4:0] sine_offset;
+    reg signed [11:0] extended_sine;
 
     always @(*) begin
         case (wave_index [ 5:0 ])
             // Positive Half-Cycle (Crest)
-            6'd0,  6'b100000: sine_offset =  5'sb00000; // 0
+            6'd0,  6'd32:     sine_offset =  5'sb00000; // 0
             6'd1,  6'd31:     sine_offset =  5'sb00001; // 1
             6'd2,  6'd30:     sine_offset =  5'sb00001; // 1
             6'd3,  6'd29:     sine_offset =  5'sb00010; // 2
@@ -71,7 +76,7 @@ module tt_um_combined (
             6'd13, 6'd19:     sine_offset =  5'sb00111; // 7
             6'd14, 6'd18:     sine_offset =  5'sb00111; // 7
             6'd15, 6'd17:     sine_offset =  5'sb00111; // 7
-            6'd16:            sine_offset =  5'sb00111; // 7 (Smooth Crest Peak)
+            6'd16:            sine_offset =  5'sb00111; // 7
             
             // Negative Half-Cycle (Trough)
             6'd33, 6'd63:     sine_offset = -5'sb00001; // -1
@@ -89,21 +94,24 @@ module tt_um_combined (
             6'd45, 6'd51:     sine_offset = -5'sb00111; // -7
             6'd46, 6'd50:     sine_offset = -5'sb00111; // -7
             6'd47, 6'd49:     sine_offset = -5'sb00111; // -7
-            6'd48:            sine_offset = -5'sb00111; // -7 (Smooth Trough Valley)
+            6'd48:            sine_offset = -5'sb00111; // -7
+            
+            default:          sine_offset =  5'sb00000;
         endcase
+        extended_sine = sine_offset; 
     end
 
-    // Use a wide screen space context loop to check vertical coordinate ranges.
-    wire signed [11:0] true_wave_y = $signed({2'b0, logo_y}) - sine_offset;
+    wire signed [11:0] true_wave_y = logo_y - extended_sine;
 
-    // Hard clamp the value to 0-63 to stop the XML validation engine from throwing errors
+    // Hard clamp the value to 0-63 to stop the ROM address from going out of bounds
     wire [5:0] safe_rom_y = (true_wave_y < 0) ? 6'd0 : 
                             (true_wave_y >= 64) ? 6'd63 : 
                             true_wave_y[5:0];
 
-    // The region filter evaluates true_wave_y. This lets both borders display dynamic curves.
-    wire logo_region = (pix_x >= logo_left && pix_x < logo_left + LOGO_WIDTH) &&
-                       (true_wave_y >= 0 && true_wave_y < 64);
+    // Evaluates inside a guaranteed signed domain context to clear up horizontal tearing artifacting
+    wire logo_region = (pix_x >= logo_left) && (pix_x < logo_left + LOGO_WIDTH) &&
+                       (true_wave_y >= 0) && (true_wave_y < 64) &&
+                       (logo_y >= -16) && (logo_y < 80);
 
     wire [1:0] pixel_color;
     bitmap_rom rom1 (
