@@ -13,7 +13,10 @@ old: <img width="1308" height="734" alt="image" src="https://github.com/user-att
 
 
 
-https://github.com/user-attachments/assets/60bd00e5-5879-4c81-9a8c-a224bce7bac0
+
+https://github.com/user-attachments/assets/660e6906-c295-4ebb-b98c-c1d7ed597ce1
+
+
 
 Run it in your browser by clicking this link: https://fpga.vga-playground.pages.dev/?repo=https://github.com/alexandercoabad/PhilippineFlag_waving
 
