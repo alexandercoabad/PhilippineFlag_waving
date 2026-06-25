@@ -1,10 +1,29 @@
+
+
+
+
 ![](../../workflows/gds/badge.svg) ![](../../workflows/docs/badge.svg) ![](../../workflows/test/badge.svg) ![](../../workflows/fpga/badge.svg)
 
-# Tiny Tapeout Verilog Project Template
+# PILIPINAS flag in DVD-like screensaver and 7-segment display
 
-- [Read the documentation for project](docs/info.md)
+<img width="1308" height="734" alt="image" src="https://github.com/user-attachments/assets/0a40c82e-47e6-472e-9fe3-cb1022d81699" />
 
-## What is Tiny Tapeout?
+
+
+https://github.com/user-attachments/assets/60bd00e5-5879-4c81-9a8c-a224bce7bac0
+
+Run it in your browser by clicking this link: https://fpga.vga-playground.pages.dev/?repo=https://github.com/alexandercoabad/PILIPINAS_flag7segment
+
+## Layout
+
+
+<img width="463" height="639" alt="2D_flag" src="https://github.com/user-attachments/assets/a0d43f09-675b-421f-a023-64df823658f6" />
+
+<img width="463" height="639" alt="Screenshot 2026-06-24 at 1 52 14 PM" src="https://github.com/user-attachments/assets/2322a187-0133-40a5-bcbd-c10980016852" />
+
+
+Link to 3D viewer: https://gds-viewer.tinytapeout.com/?model=https://alexandercoabad.github.io/PILIPINAS_flag7segment/tinytapeout.oas&pdk=sky130A
+
 
 Tiny Tapeout is an educational project that aims to make it easier and cheaper than ever to get your digital and analog designs manufactured on a real chip.
 
