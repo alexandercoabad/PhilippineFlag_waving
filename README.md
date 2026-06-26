@@ -6,6 +6,12 @@
 
 # PILIPINAS flag in DVD-like screensaver and 7-segment display with smoother wave!
 
+
+
+Uploading IMG_2930 (1).mov…
+
+
+
 <img width="1286" height="668" alt="image" src="https://github.com/user-attachments/assets/2925ea09-e339-4478-a734-5da456f865b8" />
 
 
